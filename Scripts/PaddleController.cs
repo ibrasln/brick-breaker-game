@@ -13,6 +13,9 @@ public class PaddleController : MonoBehaviour
 
     GameManager gameManager;
 
+    [SerializeField]
+    GameObject ball;
+
     private void Awake()
     {
         gameManager = Object.FindObjectOfType<GameManager>();
@@ -47,4 +50,27 @@ public class PaddleController : MonoBehaviour
         transform.position = temp;
         #endregion
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("liveUpBall"))
+        {
+            gameManager.UpdateLives(1);
+            Destroy(other.gameObject);
+        }
+        
+        else if (other.CompareTag("scoreUpBall"))
+        {
+            gameManager.UpdateScore(25);
+            Destroy(other.gameObject);
+        }
+        
+        //else if (other.CompareTag("multipleBall"))
+        //{
+        //    Instantiate(ball, ball.transform.position, Quaternion.identity);
+        //    Destroy(other.gameObject);
+        //}
+
+    }
+
 }

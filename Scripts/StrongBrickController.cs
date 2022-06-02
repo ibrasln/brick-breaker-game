@@ -15,6 +15,9 @@ public class StrongBrickController : MonoBehaviour
 
     GameManager gameManager;
 
+    [SerializeField]
+    GameObject scoreUpBall;
+
     private void Awake()
     {
         gameManager = Object.FindObjectOfType<GameManager>();
@@ -40,6 +43,14 @@ public class StrongBrickController : MonoBehaviour
             {
                 Instantiate(brickBrokenEffect, transform.position, transform.rotation);
                 gameManager.UpdateScore(10); // Ikinci vurusta 10 puan kazandirir.
+
+                int rand = Random.Range(1, 101);
+
+                if(rand > 50)
+                {
+                    Instantiate(scoreUpBall, transform.position, transform.rotation);
+                }
+
                 Destroy(gameObject);
             }
 

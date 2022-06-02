@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenImage: {fileID: 21300000, guid: 7ba440637882dda4db0943e3ee8eec9a, type: 3}
   brickBrokenEffect: {fileID: 7987260192063964348, guid: 2df069df10a854f458403913bb114522, type: 3}
+  scoreUpBall: {fileID: 4293980645465598352, guid: 995c19bd9eb435f4eaf264b32862f8eb, type: 3}
 --- !u!61 &9080734113087334783
 BoxCollider2D:
   m_ObjectHideFlags: 0
